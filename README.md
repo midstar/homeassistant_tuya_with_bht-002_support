@@ -1,15 +1,15 @@
-# Homeassistant Tuya integration with BHT-002 thermostat support
+# Home Assistant Tuya integration with BHT-002 thermostat support
 
 ## Overview
 
 I and many others are frustrated that the BHT-002 thermostats (sometimes called Moes or Beco)
-are showing a 5 times to small temperature using the offical Tuya integration.
+are showing a 5 times too small temperature using the offical Tuya integration.
 
 Examples of issues reported in the Home Assistant Core issue tracker are 
 [Issue 72703](https://github.com/home-assistant/core/issues/72703) and
 [Issue 73612](https://github.com/home-assistant/core/issues/73612).
 
-The reason for the issue with BHT-002 thermostats is that the termostat does not
+The reason for the issue with BHT-002 is that the termostat does not
 follow the Tuya Open API specification.
 
 I made a fix for this issue found 
@@ -26,7 +26,7 @@ the offical integration.
 ### Step 1 - Uninstall the Tuya integration
 
 If you have installed the Tuya integration. Delete it in the Home Assistant configuration
-interface.
+user interface.
 
 ### Step 2 - Enable SSH
 
@@ -58,7 +58,7 @@ joel@penguin:~/temp/tuya_custom/homeassistant_core$ cd homeassistant/components/
 ### Step 4 - Modify the manifest
 
 The manifest.json file (in tuya directory) needs to include a version key/value pair.
-Add this key/value. It does not really mather which version you pick. For example:
+Add this key/value. It does not really matter which version you pick. For example:
 
 ```json
 {
