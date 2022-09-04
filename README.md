@@ -20,7 +20,7 @@ with 2.
 I made a workaround in the Tuya integration for this issue found 
 [in the clone here](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround).
 This workaround is only applied to BHT-002 thermostats based on their ID and thus other
-thermostats will work as expeted.
+thermostats will work as expected.
 
 However, the responsible authors of the Home Assistant Tuya integration refuse to include
 my changes since they won't include any device specific parts in their implementation.
