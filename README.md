@@ -98,7 +98,7 @@ create a custom_components directory unless you already have it.
 scp -R tuya/ root@192.168.1.103:/root/config/custom_components/
 ```
 
-Note that "root/config/custom_componens" is the correct directory for Home Assistant OS.
+Note that "root/config/custom_components" is the correct directory for Home Assistant OS.
 Other directories apply to other installation types. Also "root" user might be different 
 in your system. Of course you need to modify the IP address to your Home Assistant IP.
 
