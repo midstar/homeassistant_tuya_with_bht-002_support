@@ -1,21 +1,26 @@
+
+![GitHub Logo](/image.jpg)
+
 # Home Assistant Tuya integration with BHT-002 thermostat support
 
 ## Overview
 
-Me and many others are frustrated that the BHT-002 thermostats (sometimes called Moes or Beco)
+Me and many others are frustrated that the BHT-002 thermostat (sometimes called Moes or Beca Energy)
 are showing a 5 times too small temperature using the offical Tuya integration.
 
 Examples of issues reported in the Home Assistant Core issue tracker are 
 [Issue 72703](https://github.com/home-assistant/core/issues/72703) and
 [Issue 73612](https://github.com/home-assistant/core/issues/73612).
 
-The reason for the issue with BHT-002 is that the termostat does not
+The reason for the issue with BHT-002 is that the thermostat does not
 follow the Tuya Open API specification. The temperature values to/from
 the termostat should be divided by 10 in spec but BHT-002 divides temperature
 with 2.
 
 I made a workaround in the Tuya integration for this issue found 
 [in the clone here](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround).
+This workaround is only applied to BHT-002 thermostats based on their ID and thus other
+thermostats will work as expeted.
 
 However, the responsible authors of the Home Assistant Tuya integration refuse to include
 my changes since they won't include any device specific parts in their implementation.
@@ -37,24 +42,18 @@ Follow the instruction [here](https://community.home-assistant.io/t/home-assista
 
 ### Step 3 - Download the modified Tuya integration
 
-Fetch [the modified files](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround).
+Clone [the modified files](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround) and
+checkout the tuya_BHT-002_thermostat_workaround branch.
 
 ```
-joel@penguin:~/temp/tuya_custom$ git clone git@github.com:midstar/homeassistant_core.git
+joel@penguin:~/temp$ git clone git@github.com:midstar/homeassistant_core.git
 Cloning into 'homeassistant_core'...
-Warning: Permanently added the ECDSA host key for IP address '140.82.121.3' to the list of known hosts.
-remote: Enumerating objects: 641544, done.
-remote: Counting objects: 100% (2/2), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 641544 (delta 1), reused 0 (delta 0), pack-reused 641542
-Receiving objects: 100% (641544/641544), 363.22 MiB | 3.23 MiB/s, done.
-Resolving deltas: 100% (460229/460229), done.
-Updating files: 100% (27222/27222), done.
-joel@penguin:~/temp/tuya_custom$ cd homeassistant_core/
-joel@penguin:~/temp/tuya_custom/homeassistant_core$ git checkout tuya_BHT-002_thermostat_workaround 
+...
+joel@penguin:~/temp$ cd homeassistant_core/
+joel@penguin:~/temp/homeassistant_core$ git checkout tuya_BHT-002_thermostat_workaround 
 Branch 'tuya_BHT-002_thermostat_workaround' set up to track remote branch 'tuya_BHT-002_thermostat_workaround' from 'origin'.
 Switched to a new branch 'tuya_BHT-002_thermostat_workaround'
-joel@penguin:~/temp/tuya_custom/homeassistant_core$ cd homeassistant/components/tuya/
+joel@penguin:~/temp/homeassistant_core$ cd homeassistant/components/tuya/
 ```
 
 ### Step 4 - Modify the manifest
