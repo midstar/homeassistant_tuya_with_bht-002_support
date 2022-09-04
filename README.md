@@ -2,7 +2,7 @@
 
 ## Overview
 
-I and many others are frustrated that the BHT-002 thermostats (sometimes called Moes or Beco)
+Me and many others are frustrated that the BHT-002 thermostats (sometimes called Moes or Beco)
 are showing a 5 times too small temperature using the offical Tuya integration.
 
 Examples of issues reported in the Home Assistant Core issue tracker are 
@@ -10,10 +10,12 @@ Examples of issues reported in the Home Assistant Core issue tracker are
 [Issue 73612](https://github.com/home-assistant/core/issues/73612).
 
 The reason for the issue with BHT-002 is that the termostat does not
-follow the Tuya Open API specification.
+follow the Tuya Open API specification. The temperature values to/from
+the termostat should be divided by 10 in spec but BHT-002 divides temperature
+with 2.
 
-I made a fix for this issue found 
-[here](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround).
+I made a workaround in the Tuya integration for this issue found 
+[in the clone here](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround).
 
 However, the responsible authors of the Home Assistant Tuya integration refuse to include
 my changes since they won't include any device specific parts in their implementation.
