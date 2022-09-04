@@ -6,7 +6,7 @@
 ## Overview
 
 Me and many others are frustrated that the BHT-002 thermostat (sometimes called Moes or Beca Energy)
-are showing a 5 times too small temperature using the offical Tuya integration.
+is showing a 5 times too small temperature using the official Tuya integration.
 
 Examples of issues reported in the Home Assistant Core issue tracker are 
 [Issue 72703](https://github.com/home-assistant/core/issues/72703) and
@@ -14,7 +14,7 @@ Examples of issues reported in the Home Assistant Core issue tracker are
 
 The reason for the issue with BHT-002 is that the thermostat does not
 follow the Tuya Open API specification. The temperature values to/from
-the termostat should be divided by 10 in spec but BHT-002 divides temperature
+the thermostat should be divided by 10 in spec but BHT-002 divides temperature
 with 2.
 
 I made a workaround in the Tuya integration for this issue found 
@@ -26,7 +26,7 @@ However, the responsible authors of the Home Assistant Tuya integration refuse t
 my changes since they won't include any device specific parts in their implementation.
 
 Fortunately, the changes are possible to install as a custom component that overrides
-the offical integration.
+the official integration.
 
 ## Installation instruction
 
@@ -59,7 +59,7 @@ joel@penguin:~/temp/homeassistant_core$ cd homeassistant/components/tuya/
 ### Step 4 - Modify the manifest
 
 The manifest.json file (in tuya directory) needs to include a version key/value pair.
-Add this key/value. It does not really matter which version you pick. For example:
+Add this key/value. It doesn't really matter which version you pick. For example:
 
 ```json
 {
@@ -92,14 +92,14 @@ Add this key/value. It does not really matter which version you pick. For exampl
 ### Step 5 - Upload the custom component
 
 Put the modified tuya directory in the config/custom_components directory. You need to
-create custom_components directory unless you already have it.
+create a custom_components directory unless you already have it.
 
 ```
 scp -R tuya/ root@192.168.1.103:/root/config/custom_components/
 ```
 
-Note that "root/config/custom_componens" is the correct directoy for Home Assistant OS.
-Other directories applies to other installation types. Also "root" user might be different 
+Note that "root/config/custom_componens" is the correct directory for Home Assistant OS.
+Other directories apply to other installation types. Also "root" user might be different 
 in your system. Of course you need to modify the IP address to your Home Assistant IP.
 
 ### Step 6 - Configure the Tuya custom component
