@@ -95,7 +95,7 @@ Put the modified tuya directory in the config/custom_components directory. You n
 create a custom_components directory unless you already have it.
 
 ```
-scp -R tuya/ root@192.168.1.103:/root/config/custom_components/
+scp -r tuya/ root@192.168.1.103:/root/config/custom_components/
 ```
 
 Note that "root/config/custom_components" is the correct directory for Home Assistant OS.
