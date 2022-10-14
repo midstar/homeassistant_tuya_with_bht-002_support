@@ -109,6 +109,24 @@ user interface, i.e. you add it in the same way as you add the official integrat
 Since you have tuya in custom_components it will override the official integration.
 Follow the official [Tuya configuration guide](https://www.home-assistant.io/integrations/tuya/).
 
+## Add "workarounds" for other devices
+
+In the file [device_specific.py](https://github.com/midstar/homeassistant_core/blob/tuya_BHT-002_thermostat_workaround/homeassistant/components/tuya/device_specific.py)
+there is a list of devices (keyed on Product Identity) where the base for values and steps
+can be set.
+
+The device ID of your device can be seen in home assistant if you open the Tuya
+entity and check what is written below "Entity information".
+
+For BHT-002 it will look like:
+
+    thermostat (IAYz2WK1th0cMLmL) by Tuya
+
+Where IAYz2WK1th0cMLmL is the product ID.
+
+If you do changes please add a pull request to my clone of the homeassistant_core
+repository or add an issue in this repository and I will add it for you.
+
 ## Issues
 
 I will try to keep the custom integration up to date with the official Tuya integration.
