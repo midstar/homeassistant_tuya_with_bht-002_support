@@ -35,6 +35,8 @@ the official integration.
 If you have installed the Tuya integration. Delete it in the Home Assistant configuration
 user interface.
 
+If You are running Home Assistant via Docker, skip this step.
+
 ### Step 2 - Enable SSH
 
 If you are using Home Assistant OS (HASSIO) secure that you have SSH addon up and running.
@@ -52,8 +54,9 @@ joel@penguin:~/temp/homeassistant_core$ cd homeassistant_core/homeassistant/comp
 
 ### Step 4 - Modify the manifest
 
-The manifest.json file (in tuya directory) needs to include a version key/value pair.
-Add this key/value. It doesn't really matter which version you pick. For example:
+The manifest.json file (in tuya directory) needs to include a version number.
+
+It doesn't really matter which version you pick. For example `"version": "1.0.0"`:
 
 ```json
 {
