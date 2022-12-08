@@ -42,18 +42,12 @@ Follow the instruction [here](https://community.home-assistant.io/t/home-assista
 
 ### Step 3 - Download the modified Tuya integration
 
-Clone [the modified files](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround) and
-checkout the tuya_BHT-002_thermostat_workaround branch.
+Clone [the modified files](https://github.com/midstar/homeassistant_core/tree/tuya_BHT-002_thermostat_workaround) from the tuya_BHT-002_thermostat_workaround branch.
 
 ```
-joel@penguin:~/temp$ git clone git@github.com:midstar/homeassistant_core.git
-Cloning into 'homeassistant_core'...
-...
-joel@penguin:~/temp$ cd homeassistant_core/
-joel@penguin:~/temp/homeassistant_core$ git checkout tuya_BHT-002_thermostat_workaround 
-Branch 'tuya_BHT-002_thermostat_workaround' set up to track remote branch 'tuya_BHT-002_thermostat_workaround' from 'origin'.
-Switched to a new branch 'tuya_BHT-002_thermostat_workaround'
-joel@penguin:~/temp/homeassistant_core$ cd homeassistant/components/tuya/
+joel@penguin:~/temp$ git clone -b tuya_BHT-002_thermostat_workaround git@github.com:midstar/homeassistant_core.git
+
+joel@penguin:~/temp/homeassistant_core$ cd homeassistant_core/homeassistant/components/tuya/
 ```
 
 ### Step 4 - Modify the manifest
